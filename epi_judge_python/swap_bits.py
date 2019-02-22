@@ -2,8 +2,12 @@ from test_framework import generic_test
 
 
 def swap_bits(x, i, j):
-    # TODO - you fill in here.
-    return 0
+    binary = bin(x)
+    if binary[2 + i] == binary[2 + j]:
+        return x
+    new = binary[0:2+i] + binary[2+j] + binary[2+i+1:2+j] + binary[2+i] + binary[2+j+1:]
+    print(x)
+    return int(new, 2)
 
 
 if __name__ == '__main__':
